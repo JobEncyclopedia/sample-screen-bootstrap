@@ -12,7 +12,8 @@
 
   <!-- Bootstrap core CSS -->
   <!-- <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+    crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
   <!-- <link href="jumbotron.css" rel="stylesheet"> -->
@@ -20,13 +21,58 @@
     body {
       padding-top: 3.5rem;
     }
+
+    .btn-primary {
+      background-color: #28a745;
+    }
+
+    .btn-lg {
+      background-color: #28a745;
+    }
+
+    .nav-item:not(#home-link) {
+      padding-left: 0.5rem;
+    }
+    /* .home-link {
+      padding-left: 0.5rem;
+    } */
+
+    /* ul.navbar-nav a:hover {
+      color: #fff !important;
+    } */
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: #0ac535;
+    }
+
+    .bg-dark {
+      background-color: #25495d!important;
+    }
+
+    .navbar-brand {
+      display: inline-block;
+      padding-top: .3125rem;
+      padding-bottom: .3125rem;
+      /* margin-right: 1rem; */
+      font-size: 1rem;
+      line-height: inherit;
+      white-space: nowrap;
+    }
+    .dropdown-item a:focus{
+      color: #0ac535;
+    }
   </style>
+  <!-- <script>
+    $("a").on('click', function () {
+      alert("inside onclick");
+    });
+  </script> -->
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">YonMetier</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
       aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -35,38 +81,58 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" id="home-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Favourites</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Trending</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Dropdown</a>
+            aria-expanded="false">Categories</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">Arts</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">Science & Research</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">Government</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">Something else here</a>
           </div>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2" type="text" placeholder="Search a Job" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#exampleModal">Search</button>
       </form>
     </div>
   </nav>
 
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Coming Soon!!!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- ... -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
-      <h1 class="display-3">Hello, world!</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron
-        and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      <h1 class="display-3">Job Encyclopedia</h1>
+      <p>This is a complete encyclopedia of all the things that you would like to know about a job! Every job details are written by people like you and me. So why waiting? Go ahead and contribute by saying something about a job you know.</p>
+      <p><a class="btn btn-primary btn-lg" href="postjob/postjob.html" role="button">Jot about a job &raquo;</a></p>
     </div>
   </div>
 
@@ -74,32 +140,28 @@
     <!-- Example row of columns -->
     <div class="row">
       <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-          nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-          </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <h2>Job Categories</h2>
+        <p>Explore the never ending ocean of job categories, perfectly grouped and sorted, narrowing down to find what interests you.
+        </p>
+        <p><a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#exampleModal" role="button">Know More &raquo;</a></p>
       </div>
       <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-          nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-          </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <h2>Job Community</h2>
+        <p>Find people in your job interest group. Connect with them. Share with them. Become the best in your job.
+        </p>
+        <p><a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#exampleModal" role="button">Know More &raquo;</a></p>
       </div>
       <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis
-          euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
-          sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <h2>Job Comparision</h2>
+        <p>Confused about which job will suit your needs? Not able to decide which one is best for you? Compare jobs against each other to have a better insight. </p>
+        <p><a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#exampleModal" role="button">Know More &raquo;</a></p>
       </div>
     </div>
 
     <hr>
 
     <footer>
-      <p>&copy; Company 2017</p>
+      <p>&copy; YonMetier 2017</p>
     </footer>
   </div>
   <!-- /container -->
@@ -111,12 +173,14 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
   <!-- <script> -->
-    <!-- // window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>') -->
+  <!-- // window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>') -->
   <!-- </script> -->
   <!-- <script src="../../../../assets/js/vendor/popper.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
   <!-- <script src="../../../../dist/js/bootstrap.min.js"></script> -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <!-- <script src="../../../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
 </body>
